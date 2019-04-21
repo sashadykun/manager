@@ -1,7 +1,7 @@
 # OSX
 #
 .DS_Store
-/auth/auth.js
+fire_config.js
 # Xcode
 #
 build/
