@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import redusers from './reducers';
 import firebase from 'firebase';
-const firebaseConfig = require('./auth/auth')
+const firebaseConfig = require('./auth/fire_config')
 
 
 class App extends Component {
