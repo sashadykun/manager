@@ -6,6 +6,8 @@ import redusers from './reducers';
 import firebase from 'firebase';
 
 
+
+
 const firebaseConfig = require('./auth/fire_config')
 
 
@@ -13,6 +15,7 @@ const firebaseConfig = require('./auth/fire_config')
 class App extends Component {
 
     componentDidMount (){
+        console.log('this.pops', this.props)
         firebase.initializeApp(firebaseConfig);
     }
     
