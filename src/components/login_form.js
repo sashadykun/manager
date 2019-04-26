@@ -19,7 +19,7 @@ class LoginForm extends Component {
 
     onButtonPress() {
         const {email, password} = this.props
-        this.props.passwordChanged({ email, password });
+        this.props.loginUser({ email, password });
     }
 
 
@@ -60,7 +60,7 @@ class LoginForm extends Component {
 const mapStateToProps = state => {
     
     return {
-        // email : globalState.combineReducerAuthPeaceOfState.emailCreatedByRTeducer
+       
         email: state.auth.email,
         password: state.auth.password
     }

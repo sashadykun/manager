@@ -1,6 +1,3 @@
-import { statement } from "@babel/template";
-
-//reducer is function take 2 arguments and exported by default which never can return underfined
 import { EMAIL_CHANGED, PASSWORD_CHANGED } from '../actions/types';
 
 const INITIAL_STATE = { 
