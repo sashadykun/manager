@@ -6,6 +6,7 @@ import {
     LOGIN_USER_SUCCESS, 
     LOGIN_USER_FAIL
 } from './types';
+import console = require('console');
 
 
 
@@ -27,7 +28,10 @@ export const loginUser = ({ email, password }) => {
     return (dispatch) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(user => loginUserSuccess(dispatch, user))
-            .catch(() => {
+            .catch((error) => {
+                console.log( 'error', error)
+
+
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(user => loginUserSuccess(dispatch, user))
                     .catch(() => loginUserFail(dispatch))
