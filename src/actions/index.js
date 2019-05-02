@@ -4,9 +4,10 @@ import {
     EMAIL_CHANGED, 
     PASSWORD_CHANGED,
     LOGIN_USER_SUCCESS, 
-    LOGIN_USER_FAIL
+    LOGIN_USER_FAIL,
+    LOGIN_USER_WAITING
 } from './types';
-import console = require('console');
+
 
 
 
@@ -26,6 +27,8 @@ export const passwordChanged = (text) => {
 
 export const loginUser = ({ email, password }) => {
     return (dispatch) => {
+        dispatch({ type: LOGIN_USER_WAITING });
+
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(user => loginUserSuccess(dispatch, user))
             .catch((error) => {
