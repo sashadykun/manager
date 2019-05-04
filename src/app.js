@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import redusers from './reducers';
+import reducers from './reducers';
 import firebase from 'firebase';
 import LoginForm from './components/login_form';
 import ReduxThunk from 'redux-thunk';
@@ -23,7 +23,7 @@ class App extends Component {
     }
     
     render() {
-        const store = createStore(redusers, {}, applyMiddleware(ReduxThunk))
+        const store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
         return (
             <Provider store={store}>
                 <LoginForm/>
