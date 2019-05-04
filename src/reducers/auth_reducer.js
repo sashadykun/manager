@@ -3,7 +3,7 @@ import {
     PASSWORD_CHANGED,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL,
-    LOGIN_USER_WAITING
+    LOGIN_USER_WAITING_TIME
 } from '../actions/types';
 
 const INITIAL_STATE = { 
@@ -21,10 +21,10 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, email: action.payload };
         case PASSWORD_CHANGED:
             return { ...state, password: action.payload };
-        case LOGIN_USER_WAITING:
+        case LOGIN_USER_WAITING_TIME:
             return { ...state, loading: true, error: '' }
         case LOGIN_USER_SUCCESS:
-            return { ...state, user: action.payload, loading: false, error: '' };
+            return { ...state, user: action.payload, loading: false, error: '', password: '' };
         case LOGIN_USER_FAIL:
             return { ...state, error: 'Authentication Failed.', password: '', loading: false };
         default:
