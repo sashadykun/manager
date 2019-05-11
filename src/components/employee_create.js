@@ -29,9 +29,10 @@ class EmployeeCreate extends Component {
                     />
                 </CardSection>
 
-                <CardSection style={{ flexDirection: 'column' }}>
+                <CardSection >
                     <Text style={styles.pickerLabelStyle}>Select Shift</Text>
                     <Picker
+                        label="Select Shift"
                         style={{ flex: 1 }}
                         selectedValue={this.props.shift}
                         onValueChange={value => this.props.employUpdate({ prop: 'shift', value })}
@@ -47,7 +48,7 @@ class EmployeeCreate extends Component {
                 </CardSection>
 
                 <CardSection>
-                    <Button>
+                    <Button >
                         Create
                     </Button>
                 </CardSection>
@@ -60,7 +61,7 @@ const styles = {
     pickerLabelStyle: {
         fontSize: 18,
         paddingLeft: 20,
-        paddingTop: 5
+        flexDirection: 'row'
     }
 }
 
