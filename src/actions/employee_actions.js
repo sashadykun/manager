@@ -1,8 +1,13 @@
 import { EMPLOYEE_UPDATE } from './types';
 
-export const employUpdate =({ prop, value }) => {
+
+export const employeeUpdate =({ prop, value }) => {
     return {
         type: EMPLOYEE_UPDATE,
         payload:  { prop, value }
     };
+};
+
+export const employeeCreate = ({ name, phone, shift }) => {
+    console.log( 'employeeCreate', name, phone, shift)
 };
